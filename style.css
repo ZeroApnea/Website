@@ -570,6 +570,10 @@ table {
   margin: 0 10rem;
 }
 
+li > p {
+  padding: 0;
+}
+
 #contact__form {
   display: grid;
   max-width: 100%;
