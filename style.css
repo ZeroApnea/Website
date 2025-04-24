@@ -26,15 +26,63 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
+  font-size: 14px;
   color: #444;
   line-height: 1.9;
   background-color: #f3f3f3;
 }
 
+h3{
+	font-weight: bold;
+	font-style: italic;
+	font-size: 2.2em;
+	line-height: 1.4em;
+}
+
+header{
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 5000;
+}
+
+section.thin-section{
+	max-width: 800px !important;
+}
+
+section.thin-section h3{
+	margin-top: 16px;
+}
+
+section.thin-section > div{
+	margin-bottom: 48px;
+}
+
+section.thin-section > div:last-child{
+	margin-bottom: 0px;
+}
+
+section:first-of-type{
+	margin-top: 80px;
+	padding-top: 16px;
+}
+
+section:not(.section--sign-up){
+	max-width: 1920px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+section > div, section h1, section h2, section h3, section h4{
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /* GENERAL ELEMENTS */
 .section {
   padding: 15rem 3rem 3rem 3rem;
-  border-top: 1px solid #ddd;
+  /*border-top: 1px solid #ddd;*/
   transition: transform 1s, opacity 1s;
 }
 
@@ -66,6 +114,7 @@ body {
 .btn {
   display: inline-block;
   background-color: var(--color-primary);
+  color: black;
   font-size: 1.6rem;
   font-family: inherit;
   font-weight: 500;
@@ -98,6 +147,7 @@ p {
   color: #222;
   font-size: 1.7rem;
   padding-bottom: 1rem;
+  width: 100%;
 }
 
 button:focus {
@@ -212,6 +262,11 @@ h4 {
   background-image: var(--gradient-primary);
 }
 
+#pick-up{
+  padding: 4px 16px;
+  line-height: 1.4em;
+}
+
 /* FEATURES */
 .features {
   display: grid;
@@ -251,6 +306,52 @@ h4 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
+
+
+.form-grid{
+	display: grid; 
+	grid-template-columns: 1fr 96px;
+	grid-gap: 16px;
+	margin-top: 16px;
+
+	width: 90%;
+	margin: 0px auto;
+}
+
+.form-grid form{
+	display: block !important;
+}
+
+.form-grid .img-list{
+	text-align: right;
+}
+
+.form-grid img{
+	max-width: 90%;
+	margin-top: -24px;
+	margin-bottom: 24px;
+}
+
+.form-grid fieldset{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 16px;
+}
+
+.form-grid label{
+	padding-left: 0px;
+	border-radius: 0px;
+}
+
+.form-grid div{
+  padding: 0px !important;
+  border: 0 !important;
+}
+
+.form-grid .fill-row{
+	grid-column: span 2;
+}
+
 
 /* OPERATIONS */
 .operations {
@@ -505,7 +606,7 @@ h4 {
 }
 
 .modal__form * {
-  margin-left: 10%;
+  /*margin-left: 10%;*/
   font-size: 1.7rem;
   padding: 1rem 1.5rem;
   border: 1px solid #ddd;
@@ -578,13 +679,21 @@ li > p {
   display: grid;
   max-width: 100%;
 }
+
+#contact__form fieldset{
+	width: calc(100% - 16px);
+	margin: 8px;
+	padding: 24px;
+}
+
 .form-submit {
+  margin-bottom: 16px;
   grid-column: 1;
 }
 
 input,
 textarea {
-  max-width: 80%;
+  width: 100%;
 }
 
 .share-btn {
@@ -656,6 +765,11 @@ textarea {
   width: 7rem;
   border-radius: 50%;
 }
+
+.social_link img {
+	max-height: 18px;
+}
+
 .social_link svg {
   height: 2rem;
   width: 2rem;
@@ -684,6 +798,48 @@ td {
   text-align: center;
   padding: 5rem;
 }
+
+
+
+.statement{
+	width: 90%;
+	max-width: 1100px;
+	margin: 0px auto;
+	text-align: center;
+	font-style: italic;
+	font-size: 1.5em;
+	
+	margin-bottom: 72px;
+}
+
+.half-grid{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 20px;
+}
+
+.calendly-button-box{
+	width: 90%; 
+	max-width: 1920px; 
+	margin: 32px auto;	
+}
+
+.calendly-button{
+	width: 100%;
+	padding: 16px;
+	border-radius: 16px;
+	border: 3px solid var(--color-primary);
+	text-align: center;
+	font-size: 16px;
+	color: black;
+}
+
+.txt-bigger{
+	font-size: 24px;
+	font-weight: bold;
+}
+
+
 @media only screen and (max-width: 768px) {
   table {
     padding: 0;
@@ -693,7 +849,7 @@ td {
     display: block;
   }
   h1 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   .header {
     padding: 0;
@@ -720,9 +876,9 @@ td {
     row-gap: 0.5rem;
   }
   .modal {
-    max-width: 80%;
-    max-height: 80%;
-    padding: 5%;
+    max-width: 90%;
+    max-height: 90%;
+    padding: 16px;
   }
   .modal__form {
     margin: 0;
@@ -747,6 +903,23 @@ td {
   .section {
     padding: 5%;
   }
+  
+  .half-grid{
+	  grid-template-columns: 1fr;
+  }
+  
+  #pick-up{
+	  font-size: 14px;
+  }
+  
+  .form-grid{
+	  width: 100%;
+  }
+  
+  .form-grid fieldset{
+	  padding: 12px;
+  }
+  
 }
 #logo {
   float: left;
@@ -833,13 +1006,37 @@ td {
     width: 25%;
     text-align: center;
   }
+  
+  .form-grid{
+	  grid-template-columns: 1fr 256px;
+	  width: 75%;
+  }
 }
 
-@media screen and (max-width: 815px) {
+@media screen and (max-width: 880px) {
+	div.topnav a:not(#logo), div.topnav button{
+		padding: 4px 12px !important;
+		height: auto !important;
+	}
+	
+	
+	.form-grid{
+		grid-template-columns: 1fr;
+	}
+	
+	.form-grid img{
+		max-width: 30%;
+	}
+	
+	.form-grid .img-list{
+		text-align: center;
+	}
+	
+	
   .privacy {
     margin: 0 1rem;
   }
-  .topnav a:not(:first-child),
+  .topnav:not(.responsive) a:not(#pick-up):not(#logo):not(.icon),
   .dropdown .dropbtn {
     display: none;
   }
@@ -849,12 +1046,12 @@ td {
     display: block;
   }
   .modal__form * {
-    margin-left: 10%;
+    /*margin-left: 10%;
     margin-right: 10%;
-    font-size: 50%;
+    font-size: 50%;*/
   }
   .modal__form label {
-    font-size: 50%;
+   /* font-size: 50%;*/
   }
   .modal__header {
     margin: 0;
@@ -862,14 +1059,13 @@ td {
   .modal {
     width: 80%;
   }
-}
 
-@media screen and (max-width: 815px) {
   .topnav a {
     float: right;
   }
-  .topnav #pick-up {
+  header .topnav a#pick-up:not(.logo) {
     display: block;
+	padding: 12px 12px !important;
     text-align: center;
     position: relative;
     right: 5rem;
@@ -916,15 +1112,6 @@ td {
   }
   .cpap img {
     width: 60%;
-  }
-}
-
-@media screen and (max-width: 444px) {
-  .topnav a.active {
-    display: none;
-  }
-  .topnav.responsive a.active {
-    display: none;
   }
 }
 

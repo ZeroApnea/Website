@@ -22,11 +22,6 @@ const closeModal = function () {
   overlay.classList.add("hidden");
 };
 
-btnsOpenModal.forEach((btn) => btn.addEventListener("click", openModal));
-
-btnCloseModal.addEventListener("click", closeModal);
-overlay.addEventListener("click", closeModal);
-
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape" && !modal.classList.contains("hidden")) {
     closeModal();
@@ -35,25 +30,27 @@ document.addEventListener("keydown", function (e) {
 
 ///////////////////////////////////////
 // Button scrolling
-btnScrollTo.addEventListener("click", function (e) {
-  const s2coords = section2.getBoundingClientRect();
-  console.log(s2coords);
+if(btnScrollTo){
+	btnScrollTo.addEventListener("click", function (e) {
+	  const s2coords = section2.getBoundingClientRect();
+	  console.log(s2coords);
 
-  console.log(e.target.getBoundingClientRect());
+	  console.log(e.target.getBoundingClientRect());
 
-  console.log("Current scroll (X/Y)", window.pageXOffset, window.pageYOffset);
+	  console.log("Current scroll (X/Y)", window.pageXOffset, window.pageYOffset);
 
-  console.log(
-    "height/width viewport",
-    document.documentElement.clientHeight,
-    document.documentElement.clientWidth
-  );
-  section2.scrollIntoView({ behavior: "smooth" });
-});
+	  console.log(
+		"height/width viewport",
+		document.documentElement.clientHeight,
+		document.documentElement.clientWidth
+	  );
+	  section2.scrollIntoView({ behavior: "smooth" });
+	});
+}
 
 ///////////////////////////////////////
 // Reveal sections
-const allSections = document.querySelectorAll(".section");
+const allSections = document.querySelectorAll(".section:not(.first-section)");
 
 const revealSection = function (entries, observer) {
   const [entry] = entries;
