@@ -63,7 +63,7 @@ const revealSection = function (entries, observer) {
 
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null,
-  threshold: 0.15,
+  threshold: 0.12,
 });
 
 allSections.forEach(function (section) {
@@ -134,3 +134,42 @@ const slider = function () {
     );
   };
 };
+
+
+
+function classAdd(str,add){
+	return (" "+str+" ").replace(" "+add+" "," ").trim()+" "+add;
+}
+
+function classRemove(str,remove){
+	return (" "+str+" ").replace(" "+remove+" "," ").trim();
+}
+
+
+/* Tabbed Content */
+
+function setActiveTab(that){
+	var tab = parseInt(that.target.getAttribute("data-tab"));
+	
+	tabs.forEach(function(item,key){
+		if(item.className.indexOf("operations__tab--"+tab.toString()) >= 0){
+			item.className = classAdd(item.className,"operations__tab--active");
+		}
+		else{
+			item.className = classRemove(item.className,"operations__tab--active");
+		}
+	});
+	
+	tabsContent.forEach(function(item,key){
+		if(item.className.indexOf("operations__content--"+tab.toString()) >= 0){
+			item.className = classAdd(item.className,"operations__content--active");
+		}
+		else{
+			item.className = classRemove(item.className,"operations__content--active");
+		}
+	});
+}
+
+tabs.forEach(function(item,key){
+	item.addEventListener("click",setActiveTab,false);
+});

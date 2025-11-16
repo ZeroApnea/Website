@@ -47,6 +47,16 @@ header{
   z-index: 5000;
 }
 
+strong{
+	font-weight: 500;
+}
+
+
+.faq-list h2:not(.section__description){
+	margin-top: 32px;
+}
+
+
 section.thin-section{
 	max-width: 800px !important;
 }
@@ -81,7 +91,7 @@ section > div, section h1, section h2, section h3, section h4{
 
 /* GENERAL ELEMENTS */
 .section {
-  padding: 15rem 3rem 3rem 3rem;
+  padding: 5rem 3rem 3rem 3rem;
   /*border-top: 1px solid #ddd;*/
   transition: transform 1s, opacity 1s;
 }
@@ -93,7 +103,7 @@ section > div, section h1, section h2, section h3, section h4{
 
 .section__title {
   max-width: 80rem;
-  margin: 0 auto 8rem auto;
+  margin: 0 auto 4rem auto;
   font-size: xx-large;
 }
 
@@ -777,6 +787,8 @@ textarea {
 .education_links {
   text-align: center;
   margin: 2rem 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   width: 100%;
   height: fit-content;
   background-color: rgba(0, 128, 0, 0.267);
@@ -785,6 +797,16 @@ textarea {
 .education_links:hover {
   background-color: rgba(0, 128, 0, 0.719);
 }
+
+.paragraph-list h2, .paragraph-list h3, .paragraph-list h4, .paragraph-list h5{
+	margin-top: 32px;
+}
+
+section h5{
+	font-size: large;
+}
+
+
 a {
   text-decoration: none;
 }
@@ -797,6 +819,10 @@ ol {
 td {
   text-align: center;
   padding: 5rem;
+}
+
+li{
+	font-size: 1.7rem;
 }
 
 
@@ -875,6 +901,9 @@ td {
     column-gap: 3rem;
     row-gap: 0.5rem;
   }
+  .operations__content .operations__header{
+	  margin-top: 12px;
+  }
   .modal {
     max-width: 90%;
     max-height: 90%;
@@ -902,6 +931,10 @@ td {
   }
   .section {
     padding: 5%;
+  }
+  
+  section{
+	  overflow: hidden;
   }
   
   .half-grid{
@@ -1124,6 +1157,7 @@ td {
 .cpap td {
   padding: 0;
 }
-ul {
-  padding: 0;
+ul, ol {
+  padding: 0px 20px;
+  margin-bottom: 8px;
 }
