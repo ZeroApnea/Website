@@ -850,13 +850,14 @@ li{
 
 .calendly-button-box{
 	width: 90%; 
-	max-width: 1920px; 
+	max-width: 800px; 
 	margin: 32px auto;	
 }
 
 .calendly-button{
 	width: 100%;
 	padding: 16px;
+	display: block;
 	border-radius: 16px;
 	border: 3px solid var(--color-primary);
 	text-align: center;
