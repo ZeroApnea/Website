@@ -60,6 +60,11 @@ h3{
 	margin-top: 32px;
 }
 
+h1.section__header{
+	font-style: italic;
+	margin-top: 16px;
+	margin-bottom: 32px;
+}
 
 section.thin-section{
 	max-width: 800px !important;
@@ -277,8 +282,9 @@ h4 {
 }
 
 #pick-up{
-  padding: 4px 16px;
-  line-height: 1.4em;
+	min-height: 80px;
+  padding: 2.5rem 16px;
+  line-height: 1.9;
 }
 
 /* FEATURES */
